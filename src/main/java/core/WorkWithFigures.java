@@ -11,7 +11,7 @@ public class WorkWithFigures {
         Detector.trianglesCharacteristics(Detector.lines);
         Circle circle = new Circle(1, 2, 10);
         Detector.circlesArea(Circle.PI, circle.getRadius());
-        TriAngle triangleSec = new TriAngle(3, 10, 10, 19);
+        TriAngle triangleSec = new TriAngle(3, 6, 8, 13);
         Detector.lineDetect(triangleSec.getLineA(), triangleSec.getLineB(), triangleSec.getLineC());
         Detector.anglesDetect(Detector.anglesName(Detector.lines), Detector.lines);
         Detector.check(Detector.lines);

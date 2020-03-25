@@ -49,7 +49,7 @@ public class Detector {
             angleAC = 60.0;
         } else if (anglesName.equals("Isosceles Triangle")) {
             angleAB = (pow(lines[0], pow) + pow(lines[1], pow) - pow(lines[2], pow)) / (2 * lines[0] * lines[1]);
-            angleAB = cos(angleAB);
+            angleAB = acos(angleAB);
             angleAB = toDegrees(angleAB);
             angleBC = (180 - angleAB) / 2;
             angleAC = angleBC;
@@ -57,15 +57,15 @@ public class Detector {
             if(pow(lines[2], pow)==pow(lines[0], pow) + pow(lines[1], pow)){
                 angleAB = 90.0;
                 angleBC = (pow(lines[1], pow) + pow(lines[2], pow) - pow(lines[0], pow)) / (2 * lines[1] * lines[2]);
-                angleBC = cos(angleBC);
+                angleBC = acos(angleBC);
                 angleBC = toDegrees(angleBC);
                 angleAC = 180 - (angleAB + angleBC);
             }else{
             angleAB = (pow(lines[0], pow) + pow(lines[1], pow) - pow(lines[2], pow)) / (2 * lines[0] * lines[1]);
-            angleAB = cos(angleAB);
+            angleAB = acos(angleAB);
             angleAB = toDegrees(angleAB);
             angleBC = (pow(lines[1], pow) + pow(lines[2], pow) - pow(lines[0], pow)) / (2 * lines[1] * lines[2]);
-            angleBC = cos(angleBC);
+            angleBC = acos(angleBC);
             angleBC = toDegrees(angleBC);
             angleAC = 180 - (angleAB + angleBC);}
         }
