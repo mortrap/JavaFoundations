@@ -24,18 +24,12 @@ public class Circle extends Figure {
     }
 
     public void setLine(double line) {
-        this.line = 2 * PI * radius;
+        this.line = lineInteger(PI, radius);
     }
 
-    public double circlesArea(double PI, double radius) {
-        double circlesArea = PI * (radius * radius);
-        System.out.println("Circles area is: " + circlesArea);
-        return circlesArea;
-    }
 
     public double lineInteger(double PI, double radius) {
         double circleLength = 2 * PI * radius;
-        setLine(circleLength);
         System.out.println("Circles length is: " + circleLength);
         return circleLength;
     }
