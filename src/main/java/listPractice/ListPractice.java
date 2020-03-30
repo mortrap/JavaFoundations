@@ -94,7 +94,8 @@ public class ListPractice {
         for (int i = 0; i < personal.size(); i++) {
             if (personal.get(i).getName().equals("Ivan")) {
                 count++;
-                System.out.println(personal.get(i).getName() + " = " + count);//Выдернуть по имени и сосчитать
+                System.out.println(personal.get(i).getName() + " = " + count);
+                //Выдернуть по имени и сосчитать
             }
         }
         System.out.println();
@@ -105,7 +106,7 @@ public class ListPractice {
         count = 0;
         for (int i = 0; i < personal.size(); i++) {
             if (personal.get(i).getName().equals("Ivan") && (count < 2)) {
-                personal.remove(i);
+                i++;
                 count++;
             }
             System.out.print(personal.get(i).getName() + " ");// Пропустить тех кого зовут Иван
