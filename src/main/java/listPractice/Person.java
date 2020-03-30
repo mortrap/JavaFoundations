@@ -2,17 +2,27 @@ package listPractice;
 
 import oop.Duck;
 
-public class Person {
+public class Person implements Comparable<Person>, Cloneable {
     private String name;
     private String sex;
+    private String surname;
     private int age;
     private String category;
 
-    public Person(String name, String sex, int age, String category) {
+    public Person(String name, String surname, String sex, int age, String category) {
         this.name = name;
+        this.surname = surname;
         this.sex = sex;
         this.age = age;
         this.category = category;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getName() {
@@ -67,6 +77,17 @@ public class Person {
         result = 31 * result + age;
         result = 31 * result + (category != null ? category.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        if(!this.surname.equals(person.surname)){
+            return this.surname.charAt(0)-person.surname.charAt(0);
+        }else if(!this.name.equals(person.name)){
+            return this.name.charAt(0)-person.name.charAt(0);
+        }else { return this.age-person.age;}
+    }protected Object clone() throws CloneNotSupportedException{
+        return super.clone();
     }
 }
 

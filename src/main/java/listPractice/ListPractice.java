@@ -5,7 +5,7 @@ import interfaces.Man;
 import java.util.*;
 
 public class ListPractice {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Man vitalik = new Man("Vitalik", 30);
         Man semen = new Man("Semen", 22);
         Man alexandr = new Man("Alexandr", 31);
@@ -73,20 +73,20 @@ public class ListPractice {
         }
         // продолжил задания уже с другим списком
         System.out.println();
-        Person natasha = new Person("Natasha", "female", 22, "B3");
-        Person natan = new Person("Natan", "male", 26, "C");
-        Person artem = new Person("Artem", "male", 19, "A1");
-        Person rita = new Person("Rita", "female", 19, "B1");
-        Person ivan = new Person("Ivan", "male", 20, "A3");
-        Person ignat = new Person("Ignat", "male", 19, "A2");
-        Person sara = new Person("Sara", "female", 18, "B2");
-        Person nikolay = new Person("Nikolay", "male", 18, "A1");
-        Person feofan = new Person("Feofan", "male", 20, "A2");
-        Person artem1 = new Person("Artem", "male", 20, "A1");
-        Person ivan1 = new Person("Ivan", "male", 18, "B3");
-        Person ivan2 = new Person("Ivan", "male", 19, "A3");
-        Person nikifor = new Person("Nikifor", "male", 41, "A2");
-        Person narayana = new Person("Narayana", "female", 29, "B4");
+        Person natasha = new Person("Natasha", "Terranova", "female", 22, "B3");
+        Person natan = new Person("Natan", "Shpilman", "male", 26, "C");
+        Person artem = new Person("Artem", "Artemov", "male", 19, "A1");
+        Person rita = new Person("Rita", "Saakyan", "female", 19, "B1");
+        Person ivan = new Person("Ivan", "Ivanov", "male", 20, "A3");
+        Person ignat = new Person("Ignat", "Yanchuk", "male", 19, "A2");
+        Person sara = new Person("Sara", "Pizengolds", "female", 18, "B2");
+        Person nikolay = new Person("Nikolay", "Haritonov", "male", 18, "A1");
+        Person feofan = new Person("Feofan", "Neironov", "male", 20, "A2");
+        Person artem1 = new Person("Artem", "Okurkin", "male", 20, "A1");
+        Person ivan1 = new Person("Ivan", "Krutoy", "male", 18, "B3");
+        Person ivan2 = new Person("Ivan", "Tannenbaum", "male", 19, "A3");
+        Person nikifor = new Person("Nikifor", "Dart", "male", 41, "A2");
+        Person narayana = new Person("Narayana", "Eiphoriya", "female", 29, "B4");
         List<Person> personal = new ArrayList<>();
         Collections.addAll(personal, narayana, nikifor, artem, nikolay, rita, ivan, ignat, sara,
                 feofan, ivan1, artem1, ivan2, natasha, natan);
@@ -112,8 +112,6 @@ public class ListPractice {
             System.out.print(personal.get(i).getName() + " ");// Пропустить тех кого зовут Иван
         }
         System.out.print(" : this is the List without two Ivans");
-        personal.add(2, ivan);
-        personal.add(7, ivan1);
         System.out.println();
         count = 0;
         for (int i = 0; i < personal.size(); i++) {
@@ -130,12 +128,18 @@ public class ListPractice {
         }
         System.out.println();
 //Показать мужчин, имя которых начинается на N в возрасте от 18 включительно, до 27 невключительно.
-        for (int i = 0; i <personal.size() ; i++) {
-            if(personal.get(i).getSex().equals("male")&&personal.get(i).getAge()>=18&&
-            personal.get(i).getAge()<27&&personal.get(i).getName().charAt(0)=="Name".charAt(0)){
-                System.out.println(personal.get(i).getName()+ " "
+        for (int i = 0; i < personal.size(); i++) {
+            if (personal.get(i).getSex().equals("male") && personal.get(i).getAge() >= 18 &&
+                    personal.get(i).getAge() < 27 && personal.get(i).getName().charAt(0) == "Name".charAt(0)) {
+                System.out.println(personal.get(i).getName() + " "
                         + personal.get(i).getAge() + " " + personal.get(i).getSex());
             }
         }
+        System.out.println();
+        personal.sort(Person::compareTo);
+        for (Person person:personal) {
+            System.out.println(person.getName() + " : " + person.getSurname() + " : " + person.getAge() + " . ");
+        }
+
     }
 }
