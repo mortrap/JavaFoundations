@@ -133,6 +133,10 @@ public class ListPractice {
             }
         }
         System.out.println();
+        Person robocop = new Person("Saimon", "Allahakbarov", "unisex", 50, "A1");
+        Person brunhilda = new Person("Brunya", "Assa", "female", 21, "A1");
+        Person femida = new Person("Femida", "Betruemanova", "female", 80, "C");
+        Collections.addAll(personal, robocop, brunhilda, femida);
         personal.sort(Person::compareTo);
         for (Person person : personal) {
             System.out.println(person.getName() + " : " + person.getSurname() + " : " + person.getAge() + " . ");
@@ -147,12 +151,11 @@ public class ListPractice {
             }
         }
         double sum = 0;
-        count = 0;
         for (int i = 0; i < femalePersonal.size(); i++) {
             sum = femalePersonal.get(i).getAge() + sum;
         }
         double aver = sum / (femalePersonal.size());
-        System.out.println("average = " + aver);
+        System.out.println("average of woman ages is = " + aver);
 
     }
 }
