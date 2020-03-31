@@ -51,7 +51,7 @@ public class ListPractice {
         Collections.addAll(alexList, 66, 66, 66, 66, 66);
         // в первую позицию 6ой элемент
         alexList.add(0, alexList.get(6));
-        // в третью позицию 8 элемент
+        // в третью позицию 7ой элемент
         alexList.add(3, alexList.get(7));
         // удалить элемент под двадцатым индексом
         alexList.remove(20);
@@ -66,10 +66,8 @@ public class ListPractice {
         System.out.println();
         System.out.println("List: " + alexList.toString());
         // Вывести элементы под индексом кратным трём
-        for (int i = 0; i < alexList.size(); i++) {
-            if (i % 3 == 0) {
+        for (int i = 0; i < alexList.size();i=i+3) {
                 System.out.print(alexList.get(i) + " ");
-            }
         }
         // продолжил задания уже с другим списком
         System.out.println();
@@ -115,9 +113,9 @@ public class ListPractice {
         System.out.println();
         count = 0;
         for (int i = 0; i < personal.size(); i++) {
-            if (personal.get(i).getAge() % 3 == 0 && (count < 1)) {
+            if (personal.get(i).getAge() % 3 == 0) {
                 System.out.print(personal.get(i).getName() + " ");// показать первого, чей возраст делится на 3
-                count++;
+                break;
             }
         }
         System.out.println();
@@ -130,7 +128,7 @@ public class ListPractice {
 //Показать мужчин, имя которых начинается на N в возрасте от 18 включительно, до 27 невключительно.
         for (int i = 0; i < personal.size(); i++) {
             if (personal.get(i).getSex().equals("male") && personal.get(i).getAge() >= 18 &&
-                    personal.get(i).getAge() < 27 && personal.get(i).getName().charAt(0) == "Name".charAt(0)) {
+                    personal.get(i).getAge() < 27 && personal.get(i).getName().charAt(0) == "N".charAt(0)) {
                 System.out.println(personal.get(i).getName() + " "
                         + personal.get(i).getAge() + " " + personal.get(i).getSex());
             }
