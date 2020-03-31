@@ -60,9 +60,12 @@ public class ListPractice {
         //проверить есть элемент со значением 66
         System.out.println("alexList.contains(66) = " + alexList.contains(66));
         //вывести список на экран
-        for (int i = 0; i < alexList.size(); i++) {
-            System.out.print(alexList.get(i) + " ");
+        int[] helpArray = new int[alexList.size()];
+        for (int i = 0; i < helpArray.length; i++) {
+            helpArray[i] = alexList.get(i);
         }
+        System.out.println();
+        System.out.println(Arrays.toString(helpArray));
         System.out.println();
         System.out.println("List: " + alexList.toString());
         // Вывести элементы под индексом кратным трём
