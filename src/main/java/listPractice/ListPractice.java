@@ -111,7 +111,6 @@ public class ListPractice {
         }
         System.out.print(" : this is the List without two Ivans");
         System.out.println();
-        count = 0;
         for (int i = 0; i < personal.size(); i++) {
             if (personal.get(i).getAge() % 3 == 0) {
                 System.out.print(personal.get(i).getName() + " ");// показать первого, чей возраст делится на 3
@@ -139,6 +138,21 @@ public class ListPractice {
             System.out.println(person.getName() + " : " + person.getSurname() + " : " + person.getAge() + " . ");
         }
         ivan.clone();
+        count = 0;
+        List<Person> femalePersonal = new ArrayList<>();
+        for (int i = 0; i < personal.size(); i++) {
+            if (personal.get(i).getSex().equals("female")) {
+                femalePersonal.add(count, personal.get(i));
+                count++;
+            }
+        }
+        double sum = 0;
+        count = 0;
+        for (int i = 0; i < femalePersonal.size(); i++) {
+            sum = femalePersonal.get(i).getAge() + sum;
+        }
+        double aver = sum / (femalePersonal.size());
+        System.out.println("average = " + aver);
 
     }
 }
