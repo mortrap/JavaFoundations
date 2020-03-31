@@ -1,6 +1,6 @@
 package listPractice;
 
-import oop.Duck;
+
 
 public class Person implements Comparable<Person>, Cloneable {
     private String name;
