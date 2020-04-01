@@ -1,7 +1,6 @@
 package listPractice;
 
 
-
 public class Person implements Comparable<Person>, Cloneable {
     private String name;
     private String sex;
@@ -81,12 +80,16 @@ public class Person implements Comparable<Person>, Cloneable {
 
     @Override
     public int compareTo(Person person) {
-        if(!this.surname.equals(person.surname)){
-            return this.surname.charAt(0)-person.surname.charAt(0);
-        }else if(!this.name.equals(person.name)){
-            return this.name.charAt(0)-person.name.charAt(0);
-        }else { return this.age-person.age;}
-    }protected Object clone() throws CloneNotSupportedException{
+        if (!this.surname.equals(person.surname)) {
+            return this.surname.charAt(0) - person.surname.charAt(0);
+        } else if (!this.name.equals(person.name)) {
+            return this.name.charAt(0) - person.name.charAt(0);
+        } else {
+            return this.age - person.age;
+        }
+    }
+
+    protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 }
