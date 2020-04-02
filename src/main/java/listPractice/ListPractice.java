@@ -166,5 +166,11 @@ public class ListPractice {
             }
         };
         System.out.println("comparator.compare(ivan, ivan1) = " + comparator.compare(ivan, ivan1));
+        femalePersonal.sort(Comparator.comparingInt(Person::getAge));
+        for (Person person:femalePersonal
+             ) {
+            System.out.println(person.getName() + " " + person.getAge());
+
+        }
     }
 }
