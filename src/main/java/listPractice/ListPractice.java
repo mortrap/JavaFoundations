@@ -84,7 +84,7 @@ public class ListPractice {
         Person nikolay = new Person("Nikolay", "Haritonov", "male", 18, "A1");
         Person feofan = new Person("Feofan", "Neironov", "male", 20, "A2");
         Person artem1 = new Person("Artem", "Okurkin", "male", 20, "A1");
-        Person ivan1 = new Person("Ivan", "Krutoy", "male", 18, "B3");
+        Person ivan1 = new Person("Ivan", "Ivanov", "male", 18, "B3");
         Person ivan2 = new Person("Ivan", "Tannenbaum", "male", 19, "A3");
         Person nikifor = new Person("Nikifor", "Dart", "male", 41, "A2");
         Person narayana = new Person("Narayana", "Eiphoriya", "female", 29, "B4");
@@ -159,6 +159,12 @@ public class ListPractice {
         }
         double aver = sum / (femalePersonal.size());
         System.out.println("average of woman ages is = " + aver);
-
+        Comparator<Person> comparator = new Comparator<Person>() {
+            @Override
+            public int compare(Person person, Person person1) {
+                return person.compareTo(person1);
+            }
+        };
+        System.out.println("comparator.compare(ivan, ivan1) = " + comparator.compare(ivan, ivan1));
     }
 }
