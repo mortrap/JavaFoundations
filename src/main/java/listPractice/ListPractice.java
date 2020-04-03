@@ -170,7 +170,7 @@ public class ListPractice {
         for (Person person:femalePersonal
              ) {
             System.out.println(person.getName() + " " + person.getAge());
-
         }
+        femalePersonal.toArray();
     }
 }
