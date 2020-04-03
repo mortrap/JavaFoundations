@@ -96,6 +96,7 @@ public class MyArrayList {
         for (int i = 0; i < realSize; i++) {
             array[i] = null;
         }
+        realSize = 1;
     }
 
 
@@ -105,12 +106,14 @@ public class MyArrayList {
     }
 
     public Object set(int index, Object o) {
+        indexOutOfRange(index);
         increaseArray(realSize, array);
         array[index] = null;
         return array[index] = o;
     }
 
     public void add(int index, Object o) {
+        indexOutOfRange(index);
         increaseArray(realSize, array);
         realSize++;
         for (int i = realSize - 1; i >= index; i--) {
