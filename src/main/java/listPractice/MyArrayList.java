@@ -20,13 +20,14 @@ public class MyArrayList {
     }
 
     public boolean isEmpty() {
-        for (int i = 0; i < realSize; i++) {
-            if (array[i] == null) {
-                System.out.println(i);
-                break;
+        int count = 0;
+        while (array[count] == null) {
+            count++;
+            if(count==realSize){
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public boolean contains(Object o) {
@@ -42,12 +43,12 @@ public class MyArrayList {
         return false;
     }
 
-    public Iterator iterator() {
-        return null;
-    }
-
     public Object[] toArray() {
-        return new Object[realSize];
+        Object[] secArray = new Object[realSize];
+        for (int i = 0; i < realSize; i++) {
+            secArray[i] = array[i];
+        }
+        return secArray;
     }
 
     public boolean add(Object o) {
@@ -96,7 +97,6 @@ public class MyArrayList {
         for (int i = 0; i < realSize; i++) {
             array[i] = null;
         }
-        realSize = 1;
     }
 
 
@@ -108,7 +108,6 @@ public class MyArrayList {
     public Object set(int index, Object o) {
         indexOutOfRange(index);
         increaseArray(realSize, array);
-        array[index] = null;
         return array[index] = o;
     }
 

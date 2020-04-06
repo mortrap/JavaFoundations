@@ -44,5 +44,8 @@ public class MyArrayListRunner {
                 + myArrayList.containsAll(subArrayList));
         myArrayList.remove(sasha);
         System.out.println(myArrayList);
+        myArrayList.toArray();
+        myArrayList.clear();
+        System.out.println("myArrayList.isEmpty() = " + myArrayList.isEmpty());
     }
 }

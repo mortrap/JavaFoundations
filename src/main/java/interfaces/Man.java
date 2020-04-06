@@ -15,8 +15,13 @@ public class Man implements Comparable<Man> {
 
     @Override
     public int compareTo(Man o) {
-        return this.age - o.age;
+        if (!this.name.equals(o.name)) {
+            return this.name.compareTo(o.name);
+        } else {
+            return this.age - o.age;
+        }
     }
+
 
     public String getName() {
         return name;
