@@ -121,6 +121,9 @@ public class MyLinkedList<E> {
                 node = node.getNext();
             }
             node.setNext(subNode);
+            while (subNode.getNext() != null) {
+                subNode = subNode.getNext();
+            }
         } else {
             head = subNode;
         }
@@ -199,10 +202,26 @@ public class MyLinkedList<E> {
     }
 
 
-    public void add(int i, Object o) {
-
+    public void add(int index, E e) {
+        MyNode<E> node = head;
+        MyNode<E> subNode = new MyNode<>(e, null);
+        if (head != null) {
+            if (index > 0) {
+                for (int i = 0; i < index - 1; i++) {
+                    node = node.getNext();
+                }
+                MyNode<E> helpNode = new MyNode<>(e, null);
+                for (int i = 0; i < index; i++) {
+                    helpNode = node.getNext();
+                }
+                node.setNext(subNode);
+                subNode.setNext(helpNode);
+            } else if (index==0){
+                head=subNode;
+                subNode.setNext(node);
+            }
+        }
     }
-
 
     public E remove(int index) {
         MyNode<E> curNode = head;

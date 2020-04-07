@@ -40,12 +40,16 @@ public class LinkedListPractice {
         Woman toma = new Woman("Tamara", 35);
         womanLinkedList.add(galina);womanLinkedList.add(kristina);womanLinkedList.add(svetlana);
 //        linkedList.addAll(womanLinkedList);
+        System.out.println(linkedList.toString());
 //        linkedList.addAll(0, womanLinkedList);
 //        womanLinkedList.clear();
         System.out.println(womanLinkedList.toString());
-        System.out.println("womanLinkedList.get(0) = " + womanLinkedList.get(2));
-        System.out.println("womanLinkedList.set(0, toma) = " + womanLinkedList.set(2, toma));
+        System.out.println("womanLinkedList.get(2) = " + womanLinkedList.get(2));
+//        System.out.println("womanLinkedList.set(2, toma) = " + womanLinkedList.set(2, toma));
         System.out.println(womanLinkedList.toString());
-
+        System.out.println("linkedList.contains(yasha) = " + linkedList.contains(yasha));
+        Man gena = new Man ("Gennadiy", 38);
+        linkedList.add(4, gena);
+        System.out.println(linkedList.toString());
     }
 }

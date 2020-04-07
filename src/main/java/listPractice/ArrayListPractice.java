@@ -4,7 +4,7 @@ import interfaces.Man;
 
 import java.util.*;
 
-public class ListPractice {
+public class ArrayListPractice {
     public static void main(String[] args) throws CloneNotSupportedException {
         Man vitalik = new Man("Vitalik", 30);
         Man semen = new Man("Semen", 22);
@@ -171,6 +171,5 @@ public class ListPractice {
              ) {
             System.out.println(person.getName() + " " + person.getAge());
         }
-        femalePersonal.toArray();
     }
 }
