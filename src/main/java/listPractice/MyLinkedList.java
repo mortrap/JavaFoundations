@@ -36,15 +36,11 @@ public class MyLinkedList<E> {
     public boolean contains(E e) {
         MyNode<E> node = head;
         if (head != null) {
-            while (node.getNext() != null) {
-                if (head.getValue().equals(e)) {
-                    return true;
-                }
-                node = node.getNext();
-                if (node.getValue().equals(e)) {
-                    return true;
-                }
+            while (!node.getValue().equals(e)) {
+                node=node.getNext();
             }
+            System.out.println(true);
+            return true;
         }
         return false;
     }
@@ -148,9 +144,9 @@ public class MyLinkedList<E> {
             } else if (index == 0) {
                 head = subNode;//если индекс равен нулю, голове присваиваем новую коллекцию
                 while (subNode.getNext() != null) {// как только коллекция заканчивается
-                    subNode = subNode.getNext();//связываем её с основной. занавес.
+                    subNode = subNode.getNext();
                 }
-                subNode.setNext(node);
+                subNode.setNext(node);//связываем её с основной. занавес.
             }
         }
         return true;
@@ -216,8 +212,8 @@ public class MyLinkedList<E> {
                 }
                 node.setNext(subNode);
                 subNode.setNext(helpNode);
-            } else if (index==0){
-                head=subNode;
+            } else if (index == 0) {
+                head = subNode;
                 subNode.setNext(node);
             }
         }
@@ -248,8 +244,15 @@ public class MyLinkedList<E> {
     }
 
 
-    public int indexOf(Object o) {
-        return 0;
+    public int indexOf(E e) {
+        MyNode<E> node = head;
+        int count = 0;
+        while (!node.getValue().equals(e)) {
+            node = node.getNext();
+            count++;
+        }
+        System.out.println(count);
+        return count;
     }
 
 
@@ -258,12 +261,43 @@ public class MyLinkedList<E> {
     }
 
 
-    public boolean removeAll(Collection collection) {
-        return false;
+    public boolean removeAll(E e) {
+        MyNode<E> node = head;
+        MyNode<E> subNode = new MyNode<>(e, null);
+        int count = 0;
+        if (!head.getValue().equals(e)) {
+            while (!node.getValue().equals(e)) {//бежим до элемента равного удаляемому
+                node = node.getNext();          //теперь в ноде лежит удаляемое значение
+                count++;                        //счётчиком выясняем номер позиции
+            }
+            node = head;                        //поэтому начинаем с начала списка, и бежим до
+            for (int i = 0; i < count - 1; i++) {//предудаляемого
+                node = node.getNext();
+            }
+            subNode = node.getNext();// храним удаляемый элемент в вспомогательном узле
+            if (subNode.getNext() != null) {// если после удаляемого не налл, то связываем
+                node.setNext(subNode.getNext());
+            }//связываем предудаляемое с послеудаляемым
+            else {// в противном случае
+                node.setNext(null);
+            }//следующий от предудаляемого налл
+
+        } else {
+            head = node.getNext();
+        }
+        return true;
     }
 
 
-    public boolean containsAll(Collection collection) {
+    public boolean containsAll(E e) {
+        MyNode<E> node = head;
+        if (head != null) {
+            while (!node.getValue().equals(e)) {
+                node = node.getNext();
+            }
+            System.out.println(true);
+            return true;
+        }
         return false;
     }
 

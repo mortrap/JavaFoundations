@@ -39,9 +39,9 @@ public class LinkedListPractice {
         Woman svetlana = new Woman("Sveta", 26);
         Woman toma = new Woman("Tamara", 35);
         womanLinkedList.add(galina);womanLinkedList.add(kristina);womanLinkedList.add(svetlana);
-//        linkedList.addAll(womanLinkedList);
+        linkedList.addAll(womanLinkedList);
         System.out.println(linkedList.toString());
-//        linkedList.addAll(0, womanLinkedList);
+//        linkedList.addAll(2, womanLinkedList);
 //        womanLinkedList.clear();
         System.out.println(womanLinkedList.toString());
         System.out.println("womanLinkedList.get(2) = " + womanLinkedList.get(2));
@@ -49,7 +49,12 @@ public class LinkedListPractice {
         System.out.println(womanLinkedList.toString());
         System.out.println("linkedList.contains(yasha) = " + linkedList.contains(yasha));
         Man gena = new Man ("Gennadiy", 38);
-        linkedList.add(4, gena);
+//        linkedList.add(3, gena);
         System.out.println(linkedList.toString());
+        linkedList.indexOf(sasha);
+//        linkedList.removeAll(womanLinkedList);
+        System.out.println(linkedList.toString());
+        linkedList.containsAll(womanLinkedList);
+        linkedList.contains(toma);
     }
 }
