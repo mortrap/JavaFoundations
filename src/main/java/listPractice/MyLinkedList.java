@@ -36,11 +36,16 @@ public class MyLinkedList<E> {
     public boolean contains(E e) {
         MyNode<E> node = head;
         if (head != null) {
-            while (!node.getValue().equals(e)) {
-                node=node.getNext();
+            while (node.getNext() != null) {
+                node = node.getNext();
+                if (node.getValue().equals(e)) {
+                    System.out.println(true);
+                    return true;
+                } else {
+                    System.out.println(false);
+                    return false;
+                }
             }
-            System.out.println(true);
-            return true;
         }
         return false;
     }
@@ -292,11 +297,24 @@ public class MyLinkedList<E> {
     public boolean containsAll(E e) {
         MyNode<E> node = head;
         if (head != null) {
-            while (!node.getValue().equals(e)) {
+            int count = 0;
+            while (node.getNext() != null) {
                 node = node.getNext();
+                if (node.getValue().equals(e)) {
+                    count++;
+                }
             }
-            System.out.println(true);
-            return true;
+            if (count > 0) {
+                if (count == 1) {
+                    System.out.println(count + " elements is available in this list " + true);
+                } else {
+                    System.out.println(count + " elements are available in this list " + true);
+                }
+                return true;
+            } else if (count == 0) {
+                System.out.println(false);
+                return false;
+            }
         }
         return false;
     }

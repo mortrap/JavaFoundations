@@ -53,8 +53,9 @@ public class LinkedListPractice {
         System.out.println(linkedList.toString());
         linkedList.indexOf(sasha);
 //        linkedList.removeAll(womanLinkedList);
+        linkedList.add(serega);
         System.out.println(linkedList.toString());
-        linkedList.containsAll(womanLinkedList);
+        linkedList.containsAll(serega);
         linkedList.contains(toma);
     }
 }
