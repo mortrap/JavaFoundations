@@ -1,21 +1,19 @@
 package exceptions;
 
 public class SnowFlakePerson extends Person {
-    private String opinionSex;
+    private String selfVision;
 
-    public SnowFlakePerson(String name, int age, String sex, String opinionSex) throws MyException {
+    public SnowFlakePerson(String name, int age, String sex, String selfVision) throws MyException {
         super(name, age, sex);
-        if (sex.equalsIgnoreCase(opinionSex)) {
-            this.opinionSex = opinionSex;
-        } else {
-            throw new MyError("Opinion about gender is more important, the brain has no gender");
-        }
+        this.selfVision = selfVision;
     }
 
-    public void setOpinionSex(String opinionSex) {
-        this.opinionSex = opinionSex;
-    }public String getOpinionSex(){
-        return opinionSex;
+    public void setOpinionSex(String selfVision) {
+        this.selfVision = selfVision;
+    }
+
+    public String getOpinionSex() {
+        return selfVision;
     }
 
 }

@@ -9,7 +9,11 @@ public class Person {
     private String sex;
 
     public Person(String name, int age, String sex) throws MyException {
-        this.name = name;
+        if(name.charAt(0)==name.toUpperCase().charAt(0)){
+        this.name = name;}
+        else{
+            throw new MyRuntimeException("First char of name most be in upper case");
+        }
         this.sex = sexParser(sex);
         if (age > 0) {
             this.age = age;
