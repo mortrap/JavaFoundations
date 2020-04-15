@@ -17,21 +17,18 @@ public class WorkWithExceptions  {
         }finally {
             System.out.println("Name:" + person.getName() + ". sex: " + person.getSex());
         }
-        SnowFlakePerson snowFlakePerson = new SnowFlakePerson("Sara", 34, "female",
-                "unicorn");
 
-        try{snowFlakePerson.setSex(snowFlakePerson.getOpinionSex());
-            Field field = Person.class.getDeclaredField("sex");
-            field.setAccessible(true);
-            field.set(person, snowFlakePerson.getOpinionSex());
+        try{SnowFlakePerson snowFlakePerson = new SnowFlakePerson("Sara", 34, "female",
+                "unicorn");
+            System.out.println("Name: " + snowFlakePerson.getName() + ". sex: " + " "
+                    + snowFlakePerson.getSex());
         }
-        catch (MyException | IllegalAccessException e){
+        catch (MyError err){
             System.err.println("Bad sex for next people");
-            System.err.println(e.getMessage());
-        }
-        finally {
-            System.out.println("Name: " + snowFlakePerson.getName() +
-                    ". " + "sex: " + snowFlakePerson.getSex());
+            System.err.println(err.getMessage());
+            throw new MyError("Yo");
+        }finally {
+            System.out.println("Q");
         }
     }
 }

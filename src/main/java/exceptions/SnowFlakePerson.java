@@ -3,7 +3,7 @@ package exceptions;
 public class SnowFlakePerson extends Person {
     private String opinionSex;
 
-    public SnowFlakePerson(String name, int age, String sex, String opinionSex) throws MyError, MyException {
+    public SnowFlakePerson(String name, int age, String sex, String opinionSex) throws MyException {
         super(name, age, sex);
         if (sex.equalsIgnoreCase(opinionSex)) {
             this.opinionSex = opinionSex;
@@ -14,9 +14,7 @@ public class SnowFlakePerson extends Person {
 
     public void setOpinionSex(String opinionSex) {
         this.opinionSex = opinionSex;
-    }
-
-    public String getOpinionSex() {
+    }public String getOpinionSex(){
         return opinionSex;
     }
 
