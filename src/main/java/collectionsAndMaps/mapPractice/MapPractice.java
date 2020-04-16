@@ -71,5 +71,12 @@ public class MapPractice {
             }
         }
         System.out.println();
+        count = 0;
+        for(Fruit fruit: fruitHashMap.values()){
+            if(fruit.getName().equalsIgnoreCase("banana")){
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 }
