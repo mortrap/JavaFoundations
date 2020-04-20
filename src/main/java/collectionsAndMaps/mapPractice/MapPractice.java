@@ -1,8 +1,5 @@
 package collectionsAndMaps.mapPractice;
 
-import collectionsAndMaps.listPractice.Fruit;
-import collectionsAndMaps.listPractice.Berry;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -16,11 +13,11 @@ public class MapPractice {
         Fruit banana = new Fruit("Banana", "Tropical", "A, B, C, B6");
         Fruit peach = new Fruit("Peach", "Drupaceous", "A, beta-carotene, E, A," +
                 " C, B1, B2, B3(PP), B4, B5, B6, B9");
-        Fruit bAnana = new Fruit("Banana", "Tropical", "A, B, C, B6");
-        Fruit bANana = new Fruit("Banana", "Tropical", "A, B, C, B6");
+        Fruit banana1 = new Fruit("Banana", "Tropical", "A, B, C, B6");
+        Fruit banana2 = new Fruit("Banana", "Tropical", "A, B, C, B6");
         Berry blueberry = new Berry("Blueberry", "Real five-pointers", "B1, B2, PP, C, A, P");
-        fruitHashMap.put("bAnana", bAnana);
-        fruitHashMap.put("bANana", bANana);
+        fruitHashMap.put("Banana1", banana1);
+        fruitHashMap.put("Banana2", banana2);
         fruitHashMap.put("Apple", apple);
         fruitHashMap.put("Orange", orange);
         fruitHashMap.put("Apricot", apricot);

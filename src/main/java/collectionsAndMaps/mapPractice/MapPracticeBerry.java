@@ -1,15 +1,12 @@
 package collectionsAndMaps.mapPractice;
 
-import collectionsAndMaps.listPractice.Berry;
-import collectionsAndMaps.listPractice.Fruit;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 public class MapPracticeBerry {
     public static void main(String[] args) {
-        HashMap<String, Object> combineHashMap = new HashMap<>();
+        HashMap<String, HelpfulFood> combineHashMap = new HashMap<>();
         Fruit apple = new Fruit("Apple", "Rosaceae", "B, A, C, K, H, E, P, PP");
         Fruit orange = new Fruit("Orange", "Citrus", "A, C, P, group B & D");
         Fruit apricot = new Fruit("Apricot", "Drupaceous", "C, E, group B & A");
@@ -25,24 +22,24 @@ public class MapPracticeBerry {
         combineHashMap.put("Banana", banana);
         combineHashMap.put("Peach", peach);
         combineHashMap.put("Blueberry", blueberry);
-        HashMap<String, Object> subCombHashMap = new HashMap<>();
-        for (Map.Entry<String, Object> pair : combineHashMap.entrySet()) {
+        HashMap<String, HelpfulFood> subCombHashMap = new HashMap<>();
+        for (Map.Entry<String, HelpfulFood> pair : combineHashMap.entrySet()) {
             if (pair.getValue().getClass().getTypeName().equals(Fruit.class.getTypeName())) {
                 subCombHashMap.put(pair.getKey(), pair.getValue());
             }
         }
-        Iterator<HashMap.Entry<String, Object>> iterator = combineHashMap.entrySet().iterator();
+        Iterator<HashMap.Entry<String, HelpfulFood>> iterator = combineHashMap.entrySet().iterator();
 
 //        while (iterator.hasNext()) {
 //            if (!iterator.getClass().getTypeName().equals(Berry.class.getTypeName())) {
 //                iterator.remove();
 //            }
 //        }
-        for (Map.Entry<String, Object> pair : subCombHashMap.entrySet()) {
+        for (Map.Entry<String, HelpfulFood> pair : subCombHashMap.entrySet()) {
             System.out.println(pair.getKey() + " : " + pair.getValue());
         }
         System.out.println("---------");
-        for (Map.Entry<String, Object> pair : combineHashMap.entrySet()) {
+        for (Map.Entry<String, HelpfulFood> pair : combineHashMap.entrySet()) {
             if (!pair.getValue().getClass().getTypeName().equals(Fruit.class.getTypeName())) {
                 System.out.println("pair.getValue().getClass().getTypeName() = "
                         + pair.getValue().getClass().getTypeName());
