@@ -20,6 +20,7 @@ public class UserInTheBusiness {
             ObjectOutputStream outputStream = new ObjectOutputStream
                     (new FileOutputStream("src/Resources/user1.out"));
             outputStream.writeObject(user1);
+            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -30,6 +31,7 @@ public class UserInTheBusiness {
             usersFieldsMap.put("subUser1", subUser1);
             System.out.println("Login: " + subUser1.getLogin() + " , password: " +
                     subUser1.getPassword());
+            inputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
