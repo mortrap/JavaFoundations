@@ -13,64 +13,48 @@ public class TextSaver {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Enter the path to file:");
             path = reader.readLine();
+            if (path.equals("asd")) {
+                path = "src/Resources/new.txt";
+            }
             System.out.println("Enter the text");
             s = reader.readLine();
-//            int count = 0;
-//            boolean isFlag = false;
-//            for (int i = 0; i < stringArray.length; i++) {
-//                if (stringArray[i] == null) {
-//                    stringArray[i] = s;
-//                    break;
-//                }
-//                count++;
-//                if (count == 9) {
-//                    isFlag = true;
-//                }
-//            }
-//            if (isFlag) {
-//                for (int j = 0; j < stringArray.length - 1; j++) {
-//                    stringArray[j] = stringArray[j + 1];
-//                }
-//                stringArray[stringArray.length - 1] = " ";
-//            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
         try (BufferedReader fileReader = new BufferedReader(new FileReader(path))
         ) {
             String input;
-            int numb = 0;
+            int count = 0;
             while ((input = fileReader.readLine()) != null) {
-                stringArray[numb] = input;
-                numb++;
+                stringArray[count] = input;
+                count++;
             }
-            if (numb <= 9) {
-                stringArray[numb] = s;
-            } else {
-                stringMove(stringArray);
-                stringArray[stringArray.length - 1] = s;
-            }
+            stringArray = stringMove(stringArray, s, count);
         } catch (IOException e) {
             e.printStackTrace();
         }
         try (PrintWriter writer = new PrintWriter(path)) {
-            for (
-                    String line : stringArray) {
-                writer.println(line);
+            for (String line : stringArray) {
+                if (line != null) {
+                    writer.println(line);
+                }
             }
             writer.flush();
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void stringMove(String[] s) {
-        for (int j = 0; j < s.length - 1; j++) {
-            s[j] = s[j + 1];
+    public static String[] stringMove(String[] s, String str, int count) {
+        if (count >= 9) {
+            for (int j = 0; j < s.length - 1; j++) {
+                s[j] = s[j + 1];
+            }
+            s[s.length - 1] = str;
+        } else {
+            s[count] = str;
         }
-        s[s.length - 1] = " ";
+        return s;
     }
 
 }
